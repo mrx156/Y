@@ -1,0 +1,45 @@
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+getgenv().KillAura = nil
+getgenv().ChestFarm = nil
+local X = Material.Load({
+	Title = "Project XXL | Lazzy Exploits",
+	Style = 2,
+	SizeX = 250,
+	SizeY = 150,
+	Theme = "Light",
+	ColorOverrides = {
+		MainFrame = Color3.fromRGB(235,235,235)
+	}
+})
+
+local Y = X.New({
+	Title = "Roblox Main Scripts"
+})
+
+
+
+local B = Y.Toggle({
+	Text = "Roblox | Kill Aura",
+	Callback = function(Value)
+		getgenv().KillAura = Value
+	end,
+	Enabled = false
+})
+
+
+
+
+while wait() do
+    if getgenv().KillAura == true then
+
+local args = {
+    [1] = false,
+    [2] = Vector3.new(-6972.88916015625, -2320.073486328125, 574.091552734375),
+    [3] = CFrame.new(-6972.88916015625, -2320.073486328125, 574.091552734375) * CFrame.Angles(-0.8419348001480103, 1.2064732313156128, 0.8081039190292358),
+    [4] = 1
+}
+
+game:GetService("ReplicatedStorage").RemoteEvents.SasukeSusanooRibcageRemote:FireServer(unpack(args))
+
+  end
+  end
